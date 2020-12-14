@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cricket_score_bord</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+</head>
+
+<body style="background:radial-gradient(red,green);">
+    
+    <audio id="srini">
+        <source src="coin-drop-4.mp3" type="audio/mpeg">
+    </audio>
+    
+    
+    
+    <div class="container" style="text-align: center;background:radial-gradient(white,red,green);">
+        <div style="width: device-width;">
+            <header style="text-align:center;background: radial-gradient(#ffff00,red);">
+                <h1>Score_Bord</h1>
+            </header>
+        </div>
+        <div style="margin-top: 25%;width:100ox;">
+            <button id="click"type="button" onclick="click()" style="border-radius: 100%;width: 20%;">Coin toss</button>
+            <h1>
+                <p id="result"></p>
+            </h1>
+        </div>
+        <form action="firsthalf.html" method="POST">
+            <div style="margin-top: 25%;">
+                <input type="submit" name="submit" id="submit" value="LET'S PLAY" onclick="submit()" style="border-radius: 15px;">
+            </div>
+        </form> <br><br><br><br><br>
+    
+    
+    
+    <footer style="size: 5%;margin-bottom: 0%;">
+        srinivasan
+    </footer></div>
+
+ <script>
+    var song = document.getElementById("srini");
+    
+        document.getElementById('click').onclick = click;
+        var heads = 0;
+        var tails = 0;
+        function click() {
+            x = (Math.floor(Math.random() * 2) == 0);
+            if (x) {
+                flip("heads");
+            } else {
+                flip("tails");
+            }
+        };
+        function flip(coin) {
+            song.play();
+            document.getElementById("result").innerHTML = coin;
+        }
+    </script>
+</body>
+
+</html>
